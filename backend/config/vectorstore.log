@@ -1,0 +1,282 @@
+2026-01-09 14:14:56,463 - VectorStoreTest - INFO - === VectorStore 통합 테스트 시작 ===
+2026-01-09 14:14:56,463 - VectorStoreTest - INFO - === 기존 벡터스토어 로드 테스트 시작 ===
+2026-01-09 14:14:56,685 - VectorStore - INFO - No existing vector store found.
+2026-01-09 14:14:56,686 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:14:56,686 - VectorStoreTest - INFO - 기존 index.faiss/index.pkl 없음
+2026-01-09 14:14:56,686 - VectorStoreTest - INFO - ℹ️ 기존 로드 실패/없음 → 새 임베딩 생성 테스트로 진행
+2026-01-09 14:14:56,688 - VectorStoreTest - INFO - === 새 임베딩 생성 테스트 시작 ===
+2026-01-09 14:14:56,700 - VectorStore - INFO - No existing vector store found.
+2026-01-09 14:14:56,700 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:14:56,701 - VectorStore - INFO - Rebuilding embeddings from folder: embedded
+2026-01-09 14:14:56,702 - VectorStore - INFO - Found 2 PDF(s) under: embedded
+2026-01-09 14:14:56,703 - VectorStore - INFO - (1/2) Processing: 카드 혜택설명서.pdf
+2026-01-09 14:15:03,944 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:15:03,986 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 14:15:04,011 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 14:15:04,017 - VectorStore - INFO - Created new FAISS store with: 카드 혜택설명서.pdf
+2026-01-09 14:15:04,020 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:15:04,020 - VectorStore - INFO - (2/2) Processing: 카드설명서.pdf
+2026-01-09 14:15:05,844 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:15:05,943 - VectorStore - INFO - Added documents into existing FAISS store: 카드설명서.pdf
+2026-01-09 14:15:05,945 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:15:05,945 - VectorStore - INFO - Folder embedding done: embedded
+2026-01-09 14:15:05,947 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:15:05,947 - VectorStoreTest - INFO - 통계: {'loaded': True, 'embedding_model': 'text-embedding-3-small', 'chunk_size': 512, 'chunk_overlap': 50, 'vector_db_path': 'vector_db', 'embedded_folder': 'embedded', 'total_docs': 33, 'has_index_files': True}
+2026-01-09 14:15:07,487 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:15:07,488 - VectorStoreTest - INFO - 검색 결과: 3개
+2026-01-09 14:15:07,488 - VectorStoreTest - INFO - rank=1 score=0.973527 file=카드설명서.pdf page=2
+2026-01-09 14:15:07,488 - VectorStoreTest - INFO - rank=2 score=0.977857 file=카드 혜택설명서.pdf page=1
+2026-01-09 14:15:07,489 - VectorStoreTest - INFO - rank=3 score=0.979169 file=카드 혜택설명서.pdf page=1
+2026-01-09 14:15:07,489 - VectorStoreTest - INFO - ✅ 새 임베딩 생성 테스트 성공
+2026-01-09 14:15:07,489 - VectorStoreTest - INFO - === 자동 로드/감시 테스트 시작 ===
+2026-01-09 14:15:07,504 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 14:15:07,505 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:15:07,505 - VectorStore - INFO - Found 2 PDF(s) under: embedded
+2026-01-09 14:15:07,506 - VectorStore - INFO - (1/2) Processing: 카드 혜택설명서.pdf
+2026-01-09 14:15:09,348 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:15:09,595 - VectorStore - INFO - Added documents into existing FAISS store: 카드 혜택설명서.pdf
+2026-01-09 14:15:09,599 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:15:09,599 - VectorStore - INFO - (2/2) Processing: 카드설명서.pdf
+2026-01-09 14:15:11,050 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:15:11,174 - VectorStore - INFO - Added documents into existing FAISS store: 카드설명서.pdf
+2026-01-09 14:15:11,178 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:15:11,179 - VectorStore - INFO - Folder embedding done: embedded
+2026-01-09 14:15:11,181 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:15:11,186 - VectorStore - INFO - Started watching folder: embedded (recursive=True)
+2026-01-09 14:15:11,920 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:15:11,923 - VectorStoreTest - INFO - 검색 결과: 3개
+2026-01-09 14:15:11,924 - VectorStoreTest - INFO - rank=1 score=0.973651 file=카드설명서.pdf page=2
+2026-01-09 14:15:11,924 - VectorStoreTest - INFO - rank=2 score=0.973674 file=카드설명서.pdf page=2
+2026-01-09 14:15:11,925 - VectorStoreTest - INFO - rank=3 score=0.977975 file=카드 혜택설명서.pdf page=1
+2026-01-09 14:15:11,955 - VectorStoreTest - INFO - 통계: {'loaded': True, 'embedding_model': 'text-embedding-3-small', 'chunk_size': 512, 'chunk_overlap': 50, 'vector_db_path': 'vector_db', 'embedded_folder': 'embedded', 'total_docs': 66, 'has_index_files': True}
+2026-01-09 14:15:11,955 - VectorStore - INFO - Stopped watching.
+2026-01-09 14:15:11,956 - VectorStoreTest - INFO - ✅ 자동 테스트 성공
+2026-01-09 14:15:11,957 - VectorStoreTest - INFO - === VectorStore 통합 테스트 완료 ===
+2026-01-09 14:24:01,321 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 14:24:01,341 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 14:24:01,346 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 14:24:01,346 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:24:10,288 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:24:26,379 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:25:47,644 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 14:25:47,662 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 14:25:47,670 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 14:25:47,671 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:26:10,940 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 14:26:10,958 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 14:26:10,963 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 14:26:10,965 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:36:27,716 - VectorStore - INFO - No existing vector store found.
+2026-01-09 14:36:27,716 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:36:27,718 - VectorStore - INFO - Rebuilding embeddings from folder: embedded
+2026-01-09 14:36:27,718 - VectorStore - INFO - Found 2 PDF(s) under: embedded
+2026-01-09 14:36:27,719 - VectorStore - INFO - (1/2) Processing: 카드 혜택설명서.pdf
+2026-01-09 14:36:31,818 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:36:31,865 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 14:36:31,885 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 14:36:31,890 - VectorStore - INFO - Created new FAISS store with: 카드 혜택설명서.pdf
+2026-01-09 14:36:31,893 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:36:31,894 - VectorStore - INFO - (2/2) Processing: 카드설명서.pdf
+2026-01-09 14:36:33,532 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:36:33,737 - VectorStore - INFO - Added documents into existing FAISS store: 카드설명서.pdf
+2026-01-09 14:36:33,739 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:36:33,739 - VectorStore - INFO - Folder embedding done: embedded
+2026-01-09 14:36:33,741 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:37:04,982 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 14:37:05,004 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 14:37:05,009 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 14:37:05,010 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:38:09,957 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:45:13,628 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 14:45:13,647 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 14:45:13,652 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 14:45:13,653 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:45:26,484 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:49:47,816 - VectorStore - INFO - No existing vector store found.
+2026-01-09 14:49:47,816 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:49:47,817 - VectorStore - INFO - Rebuilding embeddings from folder: embedded
+2026-01-09 14:49:47,818 - VectorStore - INFO - Found 2 PDF(s) under: embedded
+2026-01-09 14:49:47,818 - VectorStore - INFO - (1/2) Processing: 카드 혜택설명서.pdf
+2026-01-09 14:49:50,116 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:49:50,150 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 14:49:50,168 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 14:49:50,174 - VectorStore - INFO - Created new FAISS store with: 카드 혜택설명서.pdf
+2026-01-09 14:49:50,177 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:49:50,177 - VectorStore - INFO - (2/2) Processing: 카드설명서.pdf
+2026-01-09 14:49:52,204 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 14:49:52,435 - VectorStore - INFO - Added documents into existing FAISS store: 카드설명서.pdf
+2026-01-09 14:49:52,438 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:49:52,439 - VectorStore - INFO - Folder embedding done: embedded
+2026-01-09 14:49:52,441 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 14:49:56,860 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 14:49:56,878 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 14:49:56,883 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 14:49:56,883 - VectorStore - INFO - Initialized VectorStore | model=text-embedding-3-small chunk=512 overlap=50 db=vector_db embedded=embedded
+2026-01-09 14:50:04,535 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:01:29,046 - VectorStore - INFO - No existing vector store found.
+2026-01-09 16:01:29,046 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:01:29,046 - VectorStore - INFO - Rebuilding embeddings from folder: embedded
+2026-01-09 16:01:29,046 - VectorStore - INFO - found pdfs: 2
+2026-01-09 16:01:29,046 - VectorStore - INFO - [1/2] embed: 카드 혜택설명서.pdf
+2026-01-09 16:01:32,031 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:01:32,062 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 16:01:32,080 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 16:01:32,092 - VectorStore - INFO - created new FAISS store with 12 chunks
+2026-01-09 16:01:32,098 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 16:01:32,098 - VectorStore - INFO - [2/2] embed: 카드설명서.pdf
+2026-01-09 16:01:34,013 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:01:34,065 - VectorStore - INFO - added 16 chunks to existing store
+2026-01-09 16:01:34,070 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 16:01:34,070 - VectorStore - INFO - Folder embedding done: embedded
+2026-01-09 16:01:34,074 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 16:03:50,649 - VectorStore - INFO - No existing vector store found.
+2026-01-09 16:03:50,649 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:03:50,649 - VectorStore - INFO - Rebuilding embeddings from folder: embedded
+2026-01-09 16:03:50,655 - VectorStore - INFO - found pdfs: 2
+2026-01-09 16:03:50,655 - VectorStore - INFO - [1/2] embed: 카드 혜택설명서.pdf
+2026-01-09 16:03:52,758 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:03:52,799 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 16:03:52,823 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 16:03:52,831 - VectorStore - INFO - created new FAISS store with 12 chunks
+2026-01-09 16:03:52,835 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 16:03:52,835 - VectorStore - INFO - [2/2] embed: 카드설명서.pdf
+2026-01-09 16:03:55,328 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:03:55,370 - VectorStore - INFO - added 16 chunks to existing store
+2026-01-09 16:03:55,373 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 16:03:55,373 - VectorStore - INFO - Folder embedding done: embedded
+2026-01-09 16:03:55,373 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 16:04:09,189 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 16:04:09,211 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 16:04:09,211 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 16:04:09,211 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:04:09,219 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 16:07:13,029 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 16:07:13,054 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 16:07:13,062 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 16:07:13,062 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:07:20,330 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:07:24,017 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 16:08:07,224 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 16:08:07,252 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 16:08:07,262 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 16:08:07,262 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:08:18,224 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:08:27,161 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 16:09:09,691 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 16:09:09,707 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 16:09:09,716 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 16:09:09,716 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:09:19,833 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:09:27,804 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 16:09:59,766 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:10:07,549 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 16:18:38,187 - VectorStore - INFO - No existing vector store found.
+2026-01-09 16:18:38,187 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:18:38,187 - VectorStore - INFO - Rebuilding embeddings from folder: embedded
+2026-01-09 16:18:38,187 - VectorStore - INFO - found pdfs: 0
+2026-01-09 16:18:38,187 - VectorStore - INFO - Folder embedding done: embedded
+2026-01-09 16:18:38,187 - VectorStore - WARNING - No vector store to save.
+2026-01-09 16:19:11,617 - VectorStore - INFO - No existing vector store found.
+2026-01-09 16:19:11,617 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:19:44,033 - VectorStore - INFO - No existing vector store found.
+2026-01-09 16:19:44,035 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:19:44,036 - VectorStore - INFO - Rebuilding embeddings from folder: embedded
+2026-01-09 16:19:44,036 - VectorStore - INFO - found pdfs: 0
+2026-01-09 16:19:44,036 - VectorStore - INFO - Folder embedding done: embedded
+2026-01-09 16:19:44,036 - VectorStore - WARNING - No vector store to save.
+2026-01-09 16:20:08,493 - VectorStore - INFO - No existing vector store found.
+2026-01-09 16:20:08,498 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:20:08,498 - VectorStore - INFO - Rebuilding embeddings from folder: embedded
+2026-01-09 16:20:08,498 - VectorStore - INFO - found pdfs: 0
+2026-01-09 16:20:08,498 - VectorStore - INFO - Folder embedding done: embedded
+2026-01-09 16:20:08,498 - VectorStore - WARNING - No vector store to save.
+2026-01-09 16:26:51,928 - VectorStore - INFO - No existing vector store found.
+2026-01-09 16:26:51,929 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:26:51,930 - VectorStore - INFO - Rebuilding embeddings from folder: C:\projects\env_test\vectorDB\embedded
+2026-01-09 16:26:51,931 - VectorStore - INFO - found pdfs: 2
+2026-01-09 16:26:51,931 - VectorStore - INFO - [1/2] embed: 카드 혜택설명서.pdf
+2026-01-09 16:26:54,131 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:26:54,264 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 16:26:54,290 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 16:26:54,297 - VectorStore - INFO - created new FAISS store with 12 chunks
+2026-01-09 16:26:54,300 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 16:26:54,301 - VectorStore - INFO - [2/2] embed: 카드설명서.pdf
+2026-01-09 16:26:56,112 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:26:56,167 - VectorStore - INFO - added 16 chunks to existing store
+2026-01-09 16:26:56,169 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 16:26:56,169 - VectorStore - INFO - Folder embedding done: C:\projects\env_test\vectorDB\embedded
+2026-01-09 16:26:56,171 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 16:27:11,266 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 16:27:11,286 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 16:27:11,291 - VectorStore - INFO - Loaded existing vector store from: vector_db
+2026-01-09 16:27:11,291 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 16:27:27,800 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 16:27:33,239 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 17:25:06,481 - VectorStore - INFO - No existing vector store found.
+2026-01-09 17:25:06,481 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 17:25:06,484 - VectorStore - INFO - Rebuilding embeddings from folder: embedded
+2026-01-09 17:25:06,484 - VectorStore - INFO - found pdfs: 0
+2026-01-09 17:25:06,485 - VectorStore - INFO - Folder embedding done: embedded
+2026-01-09 17:25:06,485 - VectorStore - WARNING - No vector store to save.
+2026-01-09 17:25:15,765 - VectorStore - INFO - No existing vector store found.
+2026-01-09 17:25:15,765 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 17:25:15,766 - VectorStore - INFO - Rebuilding embeddings from folder: C:\projects\env_test\vectorDB\embedded
+2026-01-09 17:25:15,767 - VectorStore - INFO - found pdfs: 2
+2026-01-09 17:25:15,767 - VectorStore - INFO - [1/2] embed: 카드 혜택설명서.pdf
+2026-01-09 17:25:17,801 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:25:17,838 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 17:25:17,858 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 17:25:17,863 - VectorStore - INFO - created new FAISS store with 12 chunks
+2026-01-09 17:25:17,867 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 17:25:17,867 - VectorStore - INFO - [2/2] embed: 카드설명서.pdf
+2026-01-09 17:25:19,805 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:25:19,857 - VectorStore - INFO - added 16 chunks to existing store
+2026-01-09 17:25:19,860 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 17:25:19,860 - VectorStore - INFO - Folder embedding done: C:\projects\env_test\vectorDB\embedded
+2026-01-09 17:25:19,861 - VectorStore - INFO - Saved vector store to: vector_db (index.faiss + index.pkl)
+2026-01-09 17:27:56,482 - VectorStore - INFO - No existing vector store found.
+2026-01-09 17:27:56,483 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 17:31:43,940 - VectorStore - INFO - No existing vector store found.
+2026-01-09 17:31:43,940 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 17:31:43,941 - VectorStore - INFO - Rebuilding embeddings from folder: C:\projects\env_test\vectorDB\embedded
+2026-01-09 17:31:43,942 - VectorStore - INFO - found pdfs: 2
+2026-01-09 17:31:43,942 - VectorStore - INFO - [1/2] embed: 카드 혜택설명서.pdf
+2026-01-09 17:31:46,363 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:31:46,395 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 17:31:46,414 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 17:31:46,421 - VectorStore - INFO - created new FAISS store with 12 chunks
+2026-01-09 17:31:46,425 - VectorStore - INFO - Saved vector store to: C:\projects\env_test\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-09 17:31:46,425 - VectorStore - INFO - [2/2] embed: 카드설명서.pdf
+2026-01-09 17:31:48,919 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:31:48,955 - VectorStore - INFO - added 16 chunks to existing store
+2026-01-09 17:31:48,957 - VectorStore - INFO - Saved vector store to: C:\projects\env_test\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-09 17:31:48,957 - VectorStore - INFO - Folder embedding done: C:\projects\env_test\vectorDB\embedded
+2026-01-09 17:31:48,958 - VectorStore - INFO - Saved vector store to: C:\projects\env_test\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-09 17:32:05,555 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:32:10,665 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 17:32:29,874 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:32:34,949 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 17:33:03,859 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:33:10,189 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 17:33:41,471 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:33:43,491 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 17:33:53,196 - VectorStore - INFO - No existing vector store found.
+2026-01-09 17:33:53,197 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-09 17:33:53,198 - VectorStore - INFO - Rebuilding embeddings from folder: C:\projects\env_test\vectorDB\embedded
+2026-01-09 17:33:53,199 - VectorStore - INFO - found pdfs: 2
+2026-01-09 17:33:53,199 - VectorStore - INFO - [1/2] embed: 카드 혜택설명서.pdf
+2026-01-09 17:33:54,764 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:33:54,799 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-09 17:33:54,817 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-09 17:33:54,823 - VectorStore - INFO - created new FAISS store with 12 chunks
+2026-01-09 17:33:54,825 - VectorStore - INFO - Saved vector store to: C:\projects\env_test\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-09 17:33:54,825 - VectorStore - INFO - [2/2] embed: 카드설명서.pdf
+2026-01-09 17:33:58,319 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:33:58,332 - VectorStore - INFO - added 16 chunks to existing store
+2026-01-09 17:33:58,333 - VectorStore - INFO - Saved vector store to: C:\projects\env_test\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-09 17:33:58,334 - VectorStore - INFO - Folder embedding done: C:\projects\env_test\vectorDB\embedded
+2026-01-09 17:33:58,336 - VectorStore - INFO - Saved vector store to: C:\projects\env_test\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-09 17:34:17,843 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:34:25,080 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-09 17:34:56,429 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-09 17:34:58,611 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
