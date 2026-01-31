@@ -24,3 +24,4 @@ watchdog
 
 # 환경 변수
 python-dotenv
+pytest
