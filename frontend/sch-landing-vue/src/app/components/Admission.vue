@@ -1,76 +1,103 @@
 <template>
   <section id="admission" class="py-20 bg-white">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl mb-4">입학 안내</h2>
-        <p class="text-lg text-gray-600">
-          순천향대학교와 함께 꿈을 이루세요
-        </p>
-      </div>
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- 왼쪽: 기존 입학안내 콘텐츠 -->
+        <div class="lg:col-span-2">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl mb-4">입학 안내</h2>
+            <p class="text-lg text-gray-600">
+              순천향대학교와 함께 꿈을 이루세요
+            </p>
+          </div>
 
-      <div class="mb-16">
-        <h3 class="text-2xl font-bold text-center mb-8">전형 일정</h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <UiCard
-            v-for="(step, index) in admissionSteps"
-            :key="index"
-            class="text-center hover:shadow-lg transition-shadow"
-          >
-            <CardHeader>
-              <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 mx-auto">
-                <component :is="step.icon" class="w-8 h-8 text-blue-600" />
-              </div>
-              <CardTitle>{{ step.title }}</CardTitle>
-              <CardDescription>{{ step.description }}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div class="inline-block bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm">
-                {{ step.date }}
-              </div>
-            </CardContent>
-          </UiCard>
+          <div class="mb-16">
+            <h3 class="text-2xl font-bold text-center mb-8">전형 일정</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <UiCard
+                v-for="(step, index) in admissionSteps"
+                :key="index"
+                class="text-center hover:shadow-lg transition-shadow"
+              >
+                <CardHeader>
+                  <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 mx-auto">
+                    <component :is="step.icon" class="w-8 h-8 text-blue-600" />
+                  </div>
+                  <CardTitle>{{ step.title }}</CardTitle>
+                  <CardDescription>{{ step.description }}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div class="inline-block bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm">
+                    {{ step.date }}
+                  </div>
+                </CardContent>
+              </UiCard>
+            </div>
+          </div>
+
+          <div class="mb-16">
+            <h3 class="text-2xl font-bold text-center mb-8">전형 유형</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <UiCard
+                v-for="(type, index) in admissionTypes"
+                :key="index"
+                class="hover:shadow-lg transition-shadow"
+              >
+                <CardHeader>
+                  <CardTitle class="text-center">{{ type.title }}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p class="text-gray-600 text-center mb-4">
+                    {{ type.description }}
+                  </p>
+                  <div class="text-center">
+                    <span class="inline-block bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">
+                      모집인원: {{ type.quota }}
+                    </span>
+                  </div>
+                </CardContent>
+              </UiCard>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 rounded-lg p-8 text-center">
+            <h3 class="text-2xl font-bold mb-4">입학 상담</h3>
+            <p class="text-gray-700 mb-6">
+              입학과 관련하여 궁금한 사항이 있으신가요?<br />
+              전문 상담원이 친절하게 안내해드립니다.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <UiButton size="lg" class="bg-blue-600 hover:bg-blue-700">
+                <Phone class="w-5 h-5 mr-2" />
+                전화 상담: 041-530-1000
+              </UiButton>
+              <UiButton size="lg" variant="outline">
+                온라인 상담 신청
+              </UiButton>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="mb-16">
-        <h3 class="text-2xl font-bold text-center mb-8">전형 유형</h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <UiCard
-            v-for="(type, index) in admissionTypes"
-            :key="index"
-            class="hover:shadow-lg transition-shadow"
-          >
-            <CardHeader>
-              <CardTitle class="text-center">{{ type.title }}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p class="text-gray-600 text-center mb-4">
-                {{ type.description }}
-              </p>
-              <div class="text-center">
-                <span class="inline-block bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">
-                  모집인원: {{ type.quota }}
-                </span>
-              </div>
-            </CardContent>
-          </UiCard>
-        </div>
-      </div>
-
-      <div class="bg-blue-50 rounded-lg p-8 text-center">
-        <h3 class="text-2xl font-bold mb-4">입학 상담</h3>
-        <p class="text-gray-700 mb-6">
-          입학과 관련하여 궁금한 사항이 있으신가요?<br />
-          전문 상담원이 친절하게 안내해드립니다.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <UiButton size="lg" class="bg-blue-600 hover:bg-blue-700">
-            <Phone class="w-5 h-5 mr-2" />
-            전화 상담: 041-530-1000
-          </UiButton>
-          <UiButton size="lg" variant="outline">
-            온라인 상담 신청
-          </UiButton>
+        <!-- 오른쪽: 챗봇 박스 -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-8">
+            <UiCard class="hover:shadow-lg transition-shadow cursor-pointer" @click="$router.push('/chatbot')">
+              <CardHeader class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 mx-auto">
+                  <MessageCircle class="w-8 h-8 text-blue-600" />
+                </div>
+                <CardTitle>챗봇 상담</CardTitle>
+                <CardDescription>
+                  AI 챗봇으로 빠르고 간편하게 입학 정보를 확인하세요
+                </CardDescription>
+              </CardHeader>
+              <CardContent class="text-center">
+                <UiButton class="w-full">
+                  챗봇 시작하기
+                </UiButton>
+              </CardContent>
+            </UiCard>
+          </div>
         </div>
       </div>
     </div>
@@ -78,7 +105,7 @@
 </template>
 
 <script setup lang="ts">
-import { Calendar, FileText, ClipboardCheck, Phone } from 'lucide-vue-next'
+import { Calendar, FileText, ClipboardCheck, Phone, MessageCircle } from 'lucide-vue-next'
 import UiCard from '@/app/components/ui/Card.vue'
 import CardContent from '@/app/components/ui/CardContent.vue'
 import CardHeader from '@/app/components/ui/CardHeader.vue'

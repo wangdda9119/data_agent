@@ -9,6 +9,22 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.tools import StructuredTool
 from ...config.vectorDB.vectorStore import get_vector_store
 
+# 전역 벡터 스토어 인스턴스 (main.py에서 설정)
+_global_vector_store = None
+
+def set_global_vector_store(vs):
+    """서버 시작 시 호출되어 전역 벡터 스토어를 설정합니다."""
+    global _global_vector_store
+    _global_vector_store = vs
+
+def get_active_vector_store():
+    """활성 벡터 스토어를 반환합니다 (전역 인스턴스 우선, 없으면 새로 생성)."""
+    global _global_vector_store
+    if _global_vector_store is not None:
+        return _global_vector_store
+    # 폴백: 새 인스턴스 생성 (테스트 등에서 사용)
+    return get_vector_store()
+
 
 def build_context(search_results, max_chars: int = 8000) -> tuple[str, float]:
     """컨텍스트 구성 및 관련성 점수 계산"""
@@ -49,23 +65,11 @@ def search_and_answer(question: str) -> str:
     Returns:
         생성된 답변 문자열
     """
-    # VectorStore 초기화 및 경로 설정
-    vs = get_vector_store()
-    vectordb_path = Path(__file__).parent.parent.parent / "config" / "vectorDB"
-    vector_db_path = vectordb_path / "vector_db"
-    embedded_folder = vectordb_path / "embedded"
-    
-    vs.vector_db_path = str(vector_db_path)
-    vs.embedded_folder = str(embedded_folder)
-    
-    # 벡터DB가 없으면 생성
-    stats = vs.get_stats()
-    if not stats.get("loaded", False):
-        vs.create_new_embeddings(str(embedded_folder), reset_db=True)
-        stats = vs.get_stats()
+    # 전역 벡터 스토어 인스턴스 사용 (서버 시작 시 이미 초기화됨)
+    vs = get_active_vector_store()
     
     # 벡터DB에서 관련 문서 검색
-    search_results = vs.search(question, k=10)
+    search_results = vs.search(question, k=2)
     
     if not search_results:
         return "제공된 문서에서 해당 질문에 대한 정보를 찾을 수 없습니다."

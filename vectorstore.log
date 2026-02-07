@@ -263,3 +263,234 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
 2026-01-24 15:37:43,890 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
 2026-01-24 15:37:44,691 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-01-24 15:37:50,555 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-31 15:38:07,833 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-31 15:38:07,910 - VectorStore - INFO - No existing vector store found.
+2026-01-31 15:38:07,912 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-31 15:38:07,917 - VectorStore - INFO - Rebuilding embeddings from folder: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\embedded
+2026-01-31 15:38:07,918 - VectorStore - INFO - found pdfs: 5
+2026-01-31 15:38:07,918 - VectorStore - INFO - [1/5] embed: 2024-2학기 셔틀버스 운행시간표.pdf
+2026-01-31 15:38:11,977 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:38:12,001 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2026-01-31 15:38:12,001 - faiss.loader - INFO - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-01-31 15:38:12,003 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-01-31 15:38:12,696 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-01-31 15:38:12,714 - VectorStore - INFO - created new FAISS store with 2 chunks
+2026-01-31 15:38:12,717 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:38:12,717 - VectorStore - INFO - [2/5] embed: 2024학년도 2학기 등록금 수납 안내.pdf
+2026-01-31 15:38:14,069 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:38:14,073 - VectorStore - INFO - added 4 chunks to existing store
+2026-01-31 15:38:14,077 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:38:14,077 - VectorStore - INFO - [3/5] embed: 2025학년도 2학기 수강신청 안내 (3).pdf
+2026-01-31 15:38:16,723 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:38:16,735 - VectorStore - INFO - added 14 chunks to existing store
+2026-01-31 15:38:16,738 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:38:16,740 - VectorStore - INFO - [4/5] embed: 논문 작성 요령.pdf
+2026-01-31 15:38:18,746 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:38:18,763 - VectorStore - INFO - added 15 chunks to existing store
+2026-01-31 15:38:18,766 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:38:18,766 - VectorStore - INFO - [5/5] embed: 순천향대학교소개 및 요약.pdf
+2026-01-31 15:38:20,914 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:38:20,931 - VectorStore - INFO - added 22 chunks to existing store
+2026-01-31 15:38:20,934 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:38:20,936 - VectorStore - INFO - Folder embedding done: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\embedded
+2026-01-31 15:38:20,938 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:38:21,323 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:38:26,993 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-31 15:38:33,176 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-31 15:39:18,053 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-31 15:39:18,142 - VectorStore - INFO - No existing vector store found.
+2026-01-31 15:39:18,142 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-31 15:39:18,150 - VectorStore - INFO - Rebuilding embeddings from folder: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\embedded
+2026-01-31 15:39:18,152 - VectorStore - INFO - found pdfs: 5
+2026-01-31 15:39:18,154 - VectorStore - INFO - [1/5] embed: 2024-2학기 셔틀버스 운행시간표.pdf
+2026-01-31 15:39:19,389 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:39:19,397 - VectorStore - INFO - created new FAISS store with 2 chunks
+2026-01-31 15:39:19,404 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:39:19,406 - VectorStore - INFO - [2/5] embed: 2024학년도 2학기 등록금 수납 안내.pdf
+2026-01-31 15:39:20,892 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:39:20,902 - VectorStore - INFO - added 4 chunks to existing store
+2026-01-31 15:39:20,912 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:39:20,912 - VectorStore - INFO - [3/5] embed: 2025학년도 2학기 수강신청 안내 (3).pdf
+2026-01-31 15:39:23,379 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:39:23,391 - VectorStore - INFO - added 14 chunks to existing store
+2026-01-31 15:39:23,395 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:39:23,399 - VectorStore - INFO - [4/5] embed: 논문 작성 요령.pdf
+2026-01-31 15:39:25,427 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:39:25,436 - VectorStore - INFO - added 15 chunks to existing store
+2026-01-31 15:39:25,439 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:39:25,439 - VectorStore - INFO - [5/5] embed: 순천향대학교소개 및 요약.pdf
+2026-01-31 15:39:27,028 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:39:27,047 - VectorStore - INFO - added 22 chunks to existing store
+2026-01-31 15:39:27,054 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:39:27,054 - VectorStore - INFO - Folder embedding done: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\embedded
+2026-01-31 15:39:27,060 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:39:27,753 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:39:29,931 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-31 15:39:35,153 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-31 15:41:02,506 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-31 15:41:02,599 - VectorStore - INFO - No existing vector store found.
+2026-01-31 15:41:02,599 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-01-31 15:41:02,610 - VectorStore - INFO - Rebuilding embeddings from folder: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\embedded
+2026-01-31 15:41:02,612 - VectorStore - INFO - found pdfs: 5
+2026-01-31 15:41:02,612 - VectorStore - INFO - [1/5] embed: 2024-2학기 셔틀버스 운행시간표.pdf
+2026-01-31 15:41:03,834 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:41:03,836 - VectorStore - INFO - created new FAISS store with 2 chunks
+2026-01-31 15:41:03,848 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:41:03,850 - VectorStore - INFO - [2/5] embed: 2024학년도 2학기 등록금 수납 안내.pdf
+2026-01-31 15:41:05,473 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:41:05,482 - VectorStore - INFO - added 4 chunks to existing store
+2026-01-31 15:41:05,487 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:41:05,488 - VectorStore - INFO - [3/5] embed: 2025학년도 2학기 수강신청 안내 (3).pdf
+2026-01-31 15:41:08,252 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:41:08,272 - VectorStore - INFO - added 14 chunks to existing store
+2026-01-31 15:41:08,279 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:41:08,281 - VectorStore - INFO - [4/5] embed: 논문 작성 요령.pdf
+2026-01-31 15:41:12,225 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:41:12,246 - VectorStore - INFO - added 15 chunks to existing store
+2026-01-31 15:41:12,258 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:41:12,261 - VectorStore - INFO - [5/5] embed: 순천향대학교소개 및 요약.pdf
+2026-01-31 15:41:16,479 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:41:16,503 - VectorStore - INFO - added 22 chunks to existing store
+2026-01-31 15:41:16,506 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:41:16,508 - VectorStore - INFO - Folder embedding done: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\embedded
+2026-01-31 15:41:16,510 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-01-31 15:41:16,809 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-01-31 15:41:20,938 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-31 15:41:26,361 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 13:16:24,811 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 13:16:24,868 - VectorStore - INFO - No existing vector store found.
+2026-02-07 13:16:24,869 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 13:16:24,875 - VectorStore - INFO - Rebuilding embeddings from folder: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\embedded
+2026-02-07 13:16:24,877 - VectorStore - INFO - found pdfs: 5
+2026-02-07 13:16:24,878 - VectorStore - INFO - [1/5] embed: 2024-2학기 셔틀버스 운행시간표.pdf
+2026-02-07 13:16:28,562 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 13:16:28,562 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2026-02-07 13:16:28,562 - faiss.loader - INFO - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-02-07 13:16:28,562 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-02-07 13:16:28,886 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-02-07 13:16:28,897 - VectorStore - INFO - created new FAISS store with 2 chunks
+2026-02-07 13:16:28,901 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 13:16:28,901 - VectorStore - INFO - [2/5] embed: 2024학년도 2학기 등록금 수납 안내.pdf
+2026-02-07 13:16:32,257 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 13:16:32,259 - VectorStore - INFO - added 4 chunks to existing store
+2026-02-07 13:16:32,261 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 13:16:32,261 - VectorStore - INFO - [3/5] embed: 2025학년도 2학기 수강신청 안내 (3).pdf
+2026-02-07 13:16:33,429 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 13:16:33,449 - VectorStore - INFO - added 14 chunks to existing store
+2026-02-07 13:16:33,451 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 13:16:33,452 - VectorStore - INFO - [4/5] embed: 논문 작성 요령.pdf
+2026-02-07 13:16:34,893 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 13:16:34,907 - VectorStore - INFO - added 15 chunks to existing store
+2026-02-07 13:16:34,911 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 13:16:34,911 - VectorStore - INFO - [5/5] embed: 순천향대학교소개 및 요약.pdf
+2026-02-07 13:16:36,552 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 13:16:36,572 - VectorStore - INFO - added 22 chunks to existing store
+2026-02-07 13:16:36,572 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 13:16:36,572 - VectorStore - INFO - Folder embedding done: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\embedded
+2026-02-07 13:16:36,587 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 13:16:36,729 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 13:16:42,955 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 13:16:47,298 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 13:57:18,557 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 13:57:27,449 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 13:57:55,839 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 13:58:03,846 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 13:59:12,294 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 13:59:25,362 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 14:01:07,357 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 14:01:13,998 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:08:58,224 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:09:21,466 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:09:21,547 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:09:21,547 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:09:21,562 - VectorStore - INFO - Rebuilding embeddings from folder: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\embedded
+2026-02-07 15:09:21,564 - VectorStore - INFO - found pdfs: 5
+2026-02-07 15:09:21,564 - VectorStore - INFO - [1/5] embed: 2024-2학기 셔틀버스 운행시간표.pdf
+2026-02-07 15:09:23,796 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 15:09:23,817 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2026-02-07 15:09:23,817 - faiss.loader - INFO - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-02-07 15:09:23,820 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-02-07 15:09:23,990 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-02-07 15:09:24,014 - VectorStore - INFO - created new FAISS store with 2 chunks
+2026-02-07 15:09:24,020 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 15:09:24,020 - VectorStore - INFO - [2/5] embed: 2024학년도 2학기 등록금 수납 안내.pdf
+2026-02-07 15:09:25,364 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 15:09:25,379 - VectorStore - INFO - added 4 chunks to existing store
+2026-02-07 15:09:25,382 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 15:09:25,384 - VectorStore - INFO - [3/5] embed: 2025학년도 2학기 수강신청 안내 (3).pdf
+2026-02-07 15:09:27,913 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 15:09:27,946 - VectorStore - INFO - added 14 chunks to existing store
+2026-02-07 15:09:27,954 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 15:09:27,956 - VectorStore - INFO - [4/5] embed: 논문 작성 요령.pdf
+2026-02-07 15:09:31,399 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 15:09:31,638 - VectorStore - INFO - added 15 chunks to existing store
+2026-02-07 15:09:31,645 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 15:09:31,646 - VectorStore - INFO - [5/5] embed: 순천향대학교소개 및 요약.pdf
+2026-02-07 15:09:33,857 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 15:09:33,885 - VectorStore - INFO - added 22 chunks to existing store
+2026-02-07 15:09:33,895 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 15:09:33,895 - VectorStore - INFO - Folder embedding done: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\embedded
+2026-02-07 15:09:33,898 - VectorStore - INFO - Saved vector store to: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db (index.faiss + index.pkl)
+2026-02-07 15:09:33,994 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 15:09:34,982 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:09:35,595 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:09:42,047 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:19:38,116 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:19:38,159 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:19:38,159 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:21:51,650 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:21:51,650 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:22:01,424 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:22:01,424 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:22:31,582 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:22:31,583 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:22:36,260 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:22:36,260 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:22:36,260 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2026-02-07 15:22:36,276 - faiss.loader - INFO - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-02-07 15:22:36,278 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-02-07 15:22:36,303 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-02-07 15:22:36,359 - VectorStore - INFO - Loaded existing vector store from: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db
+2026-02-07 15:22:42,098 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:22:42,098 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:22:42,114 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2026-02-07 15:22:42,114 - faiss.loader - INFO - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-02-07 15:22:42,114 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-02-07 15:22:42,133 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-02-07 15:22:42,146 - VectorStore - INFO - Loaded existing vector store from: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db
+2026-02-07 15:22:53,748 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:22:53,815 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:22:53,815 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:22:53,815 - VectorStore - WARNING - Vector store not initialized.
+2026-02-07 15:22:54,419 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:23:08,137 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:25:16,535 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:25:16,535 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:25:16,535 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2026-02-07 15:25:16,535 - faiss.loader - INFO - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-02-07 15:25:16,535 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-02-07 15:25:16,564 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-02-07 15:25:16,581 - VectorStore - INFO - Loaded existing vector store from: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db
+2026-02-07 15:25:22,916 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:25:23,045 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:25:23,045 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:25:23,045 - VectorStore - WARNING - Vector store not initialized.
+2026-02-07 15:25:24,608 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:27:37,501 - VectorStore - INFO - No existing vector store found.
+2026-02-07 15:27:37,501 - VectorStore - INFO - VectorStore init | model=text-embedding-3-small, chunk=512, overlap=50, db=vector_db, embedded=embedded, stopwords=True
+2026-02-07 15:27:37,501 - faiss.loader - INFO - Loading faiss with AVX512 support.
+2026-02-07 15:27:37,516 - faiss.loader - INFO - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-02-07 15:27:37,516 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2026-02-07 15:27:37,539 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2026-02-07 15:27:37,546 - VectorStore - INFO - Loaded existing vector store from: C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db
+2026-02-07 15:27:43,771 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:27:47,585 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-02-07 15:27:49,838 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-07 15:27:53,948 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
