@@ -494,3 +494,163 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
 2026-02-07 15:27:47,585 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
 2026-02-07 15:27:49,838 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-02-07 15:27:53,948 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO    ] 2026-02-14 01:01:07,409 | VectorStore - ℹ️  No existing vector store found. Starting fresh.
+[INFO    ] 2026-02-14 01:01:07,409 | VectorStore - ✅ **VectorStore Initialization Complete**
+  - Model: `text-embedding-3-small`
+  - Chunk Size: `512` | Overlap: `50`
+  - DB Path: `vector_db`
+  - Embedded Folder: `embedded`
+  - Stopwords Enabled: `True`
+[INFO    ] 2026-02-14 01:01:07,415 | faiss.loader - Loading faiss with AVX512 support.
+[INFO    ] 2026-02-14 01:01:07,415 | faiss.loader - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[INFO    ] 2026-02-14 01:01:07,415 | faiss.loader - Loading faiss with AVX2 support.
+[INFO    ] 2026-02-14 01:01:07,874 | faiss.loader - Successfully loaded faiss with AVX2 support.
+[INFO    ] 2026-02-14 01:01:07,946 | VectorStore - ✅ **Vector Store Loaded** - Path: `C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db`
+[INFO    ] 2026-02-14 01:04:48,606 | VectorStore - ℹ️  벡터스토어가 아직 없네! 새로 만들어야겠어.
+[INFO    ] 2026-02-14 01:04:48,606 | VectorStore - 🎉 **벡터스토어 셋업 완료!**
+  • 모델: `text-embedding-3-small`
+  • 청크 크기: `512` | 오버랩: `50`
+  • 저장 경로: `vector_db`
+  • 임베드 폴더: `embedded`
+  • 불용어 필터: `True`
+[INFO    ] 2026-02-14 01:04:48,612 | faiss.loader - Loading faiss with AVX512 support.
+[INFO    ] 2026-02-14 01:04:48,612 | faiss.loader - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[INFO    ] 2026-02-14 01:04:48,612 | faiss.loader - Loading faiss with AVX2 support.
+[INFO    ] 2026-02-14 01:04:48,641 | faiss.loader - Successfully loaded faiss with AVX2 support.
+[INFO    ] 2026-02-14 01:04:48,653 | VectorStore - 🎉 **벡터스토어 로드 완료!** - 위치: `C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db`
+[INFO    ] 2026-02-14 01:04:53,258 | VectorStore - ℹ️  벡터스토어가 아직 없네! 새로 만들어야겠어.
+[INFO    ] 2026-02-14 01:04:53,258 | VectorStore - 🎉 **벡터스토어 셋업 완료!**
+  • 모델: `text-embedding-3-small`
+  • 청크 크기: `512` | 오버랩: `50`
+  • 저장 경로: `vector_db`
+  • 임베드 폴더: `embedded`
+  • 불용어 필터: `True`
+[INFO    ] 2026-02-14 01:04:53,262 | faiss.loader - Loading faiss with AVX512 support.
+[INFO    ] 2026-02-14 01:04:53,262 | faiss.loader - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[INFO    ] 2026-02-14 01:04:53,264 | faiss.loader - Loading faiss with AVX2 support.
+[INFO    ] 2026-02-14 01:04:53,282 | faiss.loader - Successfully loaded faiss with AVX2 support.
+[INFO    ] 2026-02-14 01:04:53,301 | VectorStore - 🎉 **벡터스토어 로드 완료!** - 위치: `C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db`
+[INFO    ] 2026-02-14 14:21:39,077 | VectorStore - ℹ️  벡터스토어가 아직 없네! 새로 만들어야겠어.
+[INFO    ] 2026-02-14 14:21:39,077 | VectorStore - 🎉 **벡터스토어 셋업 완료!**
+  • 모델: `text-embedding-3-small`
+  • 청크 크기: `512` | 오버랩: `50`
+  • 저장 경로: `vector_db`
+  • 임베드 폴더: `embedded`
+  • 불용어 필터: `True`
+[INFO    ] 2026-02-14 14:21:39,094 | faiss.loader - Loading faiss with AVX512 support.
+[INFO    ] 2026-02-14 14:21:39,094 | faiss.loader - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[INFO    ] 2026-02-14 14:21:39,094 | faiss.loader - Loading faiss with AVX2 support.
+[INFO    ] 2026-02-14 14:21:39,535 | faiss.loader - Successfully loaded faiss with AVX2 support.
+[INFO    ] 2026-02-14 14:21:39,583 | VectorStore - 🎉 **벡터스토어 로드 완료!** - 위치: `C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db`
+[INFO    ] 2026-02-14 14:23:39,068 | httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO    ] 2026-02-14 14:23:40,006 | httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO    ] 2026-02-14 14:23:44,686 | httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO    ] 2026-02-14 14:23:51,627 | httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO    ] 2026-02-14 14:26:59,843 | VectorStore - ℹ️  **벡터스토어를 찾을 수 없습니다.**
+처음 설정이거나 데이터베이스가 초기화된 상태입니다.
+PDF 파일을 추가하면 새로운 벡터스토어가 생성됩니다.
+[INFO    ] 2026-02-14 14:26:59,843 | VectorStore - ✅ **벡터스토어 설정이 완료되었습니다.**
+📋 설정 정보:
+  • 임베딩 모델: `text-embedding-3-small`
+  • 청크 크기: `512` (오버랩: `50`)
+  • 데이터베이스 경로: `vector_db`
+  • 임베드 폴더: `embedded`
+  • 불용어 필터: `True` (활성화됨)
+
+다음 단계를 진행해주세요.
+[INFO    ] 2026-02-14 14:26:59,860 | faiss.loader - Loading faiss with AVX512 support.
+[INFO    ] 2026-02-14 14:26:59,862 | faiss.loader - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[INFO    ] 2026-02-14 14:26:59,862 | faiss.loader - Loading faiss with AVX2 support.
+[INFO    ] 2026-02-14 14:26:59,935 | faiss.loader - Successfully loaded faiss with AVX2 support.
+[INFO    ] 2026-02-14 14:26:59,968 | VectorStore - ✅ **벡터스토어가 성공적으로 로드되었습니다.**
+📍 위치: `C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db`
+이제 검색을 수행할 수 있습니다.
+[INFO    ] 2026-02-14 14:28:26,236 | VectorStore - ℹ️  **벡터스토어를 찾을 수 없습니다.**
+처음 설정이거나 데이터베이스가 초기화된 상태입니다.
+PDF 파일을 추가하면 새로운 벡터스토어가 생성됩니다.
+[INFO    ] 2026-02-14 14:28:26,236 | VectorStore - ✅ **벡터스토어 설정이 완료되었습니다.**
+📋 설정 정보:
+  • 임베딩 모델: `text-embedding-3-small`
+  • 청크 크기: `512` (오버랩: `50`)
+  • 데이터베이스 경로: `vector_db`
+  • 임베드 폴더: `embedded`
+  • 불용어 필터: `True` (활성화됨)
+
+다음 단계를 진행해주세요.
+[INFO    ] 2026-02-14 14:28:26,246 | faiss.loader - Loading faiss with AVX512 support.
+[INFO    ] 2026-02-14 14:28:26,246 | faiss.loader - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[INFO    ] 2026-02-14 14:28:26,249 | faiss.loader - Loading faiss with AVX2 support.
+[INFO    ] 2026-02-14 14:28:26,306 | faiss.loader - Successfully loaded faiss with AVX2 support.
+[INFO    ] 2026-02-14 14:28:26,333 | VectorStore - ✅ **벡터스토어가 성공적으로 로드되었습니다.**
+📍 위치: `C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db`
+이제 검색을 수행할 수 있습니다.
+[INFO    ] 2026-02-14 14:28:33,773 | httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO    ] 2026-02-14 14:28:35,103 | httpx - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[INFO    ] 2026-02-14 14:28:39,915 | httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO    ] 2026-02-14 14:28:45,035 | httpx - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[INFO    ] 2026-02-14 15:54:23,198 | VectorStore - ℹ️  **벡터스토어를 찾을 수 없습니다.**
+처음 설정이거나 데이터베이스가 초기화된 상태입니다.
+PDF 파일을 추가하면 새로운 벡터스토어가 생성됩니다.
+[INFO    ] 2026-02-14 15:54:23,205 | VectorStore - ✅ **벡터스토어 설정이 완료되었습니다.**
+📋 설정 정보:
+  • 임베딩 모델: `text-embedding-3-small`
+  • 청크 크기: `512` (오버랩: `50`)
+  • 데이터베이스 경로: `vector_db`
+  • 임베드 폴더: `embedded`
+  • 불용어 필터: `True` (활성화됨)
+
+다음 단계를 진행해주세요.
+[INFO    ] 2026-02-14 15:54:23,446 | VectorStore - ✅ **벡터스토어가 성공적으로 로드되었습니다.**
+🗒️ 위치: `C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db`
+이제 검색을 수행할 수 있습니다.
+[INFO    ] 2026-02-14 16:08:00,140 | VectorStore - ℹ️  **벡터스토어를 찾을 수 없습니다.**
+처음 설정이거나 데이터베이스가 초기화된 상태입니다.
+PDF 파일을 추가하면 새로운 벡터스토어가 생성됩니다.
+[INFO    ] 2026-02-14 16:08:00,149 | VectorStore - ✅ **벡터스토어 설정이 완료되었습니다.**
+📋 설정 정보:
+  • 임베딩 모델: `text-embedding-3-small`
+  • 청크 크기: `512` (오버랩: `50`)
+  • 데이터베이스 경로: `vector_db`
+  • 임베드 폴더: `embedded`
+  • 불용어 필터: `True` (활성화됨)
+
+다음 단계를 진행해주세요.
+[INFO    ] 2026-02-14 16:08:00,274 | VectorStore - ✅ **벡터스토어가 성공적으로 로드되었습니다.**
+🗒️ 위치: `C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db`
+이제 검색을 수행할 수 있습니다.
+[INFO    ] 2026-02-28 11:04:48,365 | VectorStore - ℹ️  **벡터스토어를 찾을 수 없습니다.**
+처음 설정이거나 데이터베이스가 초기화된 상태입니다.
+PDF 파일을 추가하면 새로운 벡터스토어가 생성됩니다.
+[INFO    ] 2026-02-28 11:04:48,375 | VectorStore - ✅ **벡터스토어 설정이 완료되었습니다.**
+📋 설정 정보:
+  • 임베딩 모델: `text-embedding-3-small`
+  • 청크 크기: `512` (오버랩: `50`)
+  • 데이터베이스 경로: `vector_db`
+  • 임베드 폴더: `embedded`
+  • 불용어 필터: `True` (활성화됨)
+
+다음 단계를 진행해주세요.
+[INFO    ] 2026-02-28 11:04:48,946 | VectorStore - ✅ **벡터스토어가 성공적으로 로드되었습니다.**
+🗒️ 위치: `C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db`
+이제 검색을 수행할 수 있습니다.
+[INFO    ] 2026-02-28 11:08:28,328 | VectorStore - ℹ️  **벡터스토어를 찾을 수 없습니다.**
+처음 설정이거나 데이터베이스가 초기화된 상태입니다.
+PDF 파일을 추가하면 새로운 벡터스토어가 생성됩니다.
+[INFO    ] 2026-02-28 11:08:28,336 | VectorStore - ✅ **벡터스토어 설정이 완료되었습니다.**
+📋 설정 정보:
+  • 임베딩 모델: `text-embedding-3-small`
+  • 청크 크기: `512` (오버랩: `50`)
+  • 데이터베이스 경로: `vector_db`
+  • 임베드 폴더: `embedded`
+  • 불용어 필터: `True` (활성화됨)
+
+다음 단계를 진행해주세요.
+[INFO    ] 2026-02-28 11:08:28,484 | VectorStore - ✅ **벡터스토어가 성공적으로 로드되었습니다.**
+🗒️ 위치: `C:\Users\INTEL W11P_GRAM 11TH\OneDrive\Desktop\data_agent\backend\config\vectorDB\vector_db`
+이제 검색을 수행할 수 있습니다.

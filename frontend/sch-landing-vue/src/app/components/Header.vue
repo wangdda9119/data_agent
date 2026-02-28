@@ -20,7 +20,9 @@
         >
           {{ item.label }}
         </a>
-        <UiButton size="sm" class="ml-2">입학상담</UiButton>
+        <UiButton v-if="!isLoggedIn" @click="openLogin" size="sm" variant="outline" class="ml-2">로그인</UiButton>
+        <UiButton v-if="!isLoggedIn" @click="openSignup" size="sm" class="ml-2">회원가입</UiButton>
+        <UiButton v-if="isLoggedIn" @click="handleLogout" size="sm" variant="outline" class="ml-2">로그아웃</UiButton>
       </nav>
 
       <!-- Mobile Menu Button -->
@@ -46,8 +48,10 @@
         >
           {{ item.label }}
         </a>
-        <div class="px-4 pt-2">
-          <UiButton class="w-full">입학상담</UiButton>
+        <div class="px-4 pt-2 space-y-2">
+          <UiButton v-if="!isLoggedIn" @click="openLogin; isMenuOpen = false" class="w-full" variant="outline">로그인</UiButton>
+          <UiButton v-if="!isLoggedIn" @click="openSignup; isMenuOpen = false" class="w-full">회원가입</UiButton>
+          <UiButton v-if="isLoggedIn" @click="handleLogout" class="w-full" variant="outline">로그아웃</UiButton>
         </div>
       </nav>
     </div>
@@ -58,8 +62,24 @@
 import { ref } from 'vue'
 import { Menu, X } from 'lucide-vue-next'
 import UiButton from '@/app/components/ui/Button.vue'
+import { apiClient } from '@/api/client'
+import { showLoginModal, showSignupModal } from '@/api/authModal.js'
 
 const isMenuOpen = ref(false)
+const isLoggedIn = ref(apiClient.isAuthenticated())
+
+async function handleLogout() {
+  await apiClient.logout()
+  isLoggedIn.value = false
+}
+
+function openLogin() {
+  showLoginModal()
+}
+
+function openSignup() {
+  showSignupModal()
+}
 
 const menuItems = [
   { label: '홈', href: '#home' },

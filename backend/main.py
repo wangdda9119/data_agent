@@ -7,6 +7,7 @@ from typing import Optional
 from dotenv import load_dotenv
 from .agent import get_agent_response, set_global_vector_store
 from .config.vectorDB.vectorStore import get_vector_store
+from .api.auth import router as auth_router
 
 # .env 파일 로드 (서버 시작 시)
 env_path = Path(__file__).parent.parent / ".env"
@@ -54,6 +55,9 @@ async def startup_event():
         print("✓ 벡터DB 초기화 완료")
     except Exception as e:
         print(f"✗ 벡터DB 초기화 실패: {str(e)}")
+
+# 라우터 등록
+app.include_router(auth_router)
 
 
 class QueryRequest(BaseModel):

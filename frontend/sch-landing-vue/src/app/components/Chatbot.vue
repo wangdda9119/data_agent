@@ -102,6 +102,7 @@ import { nextTick, ref, watch } from 'vue'
 import { MessageCircle, X, Send } from 'lucide-vue-next'
 import UiButton from '@/app/components/ui/Button.vue'
 import UiCard from '@/app/components/ui/Card.vue'
+import { apiClient } from '@/api/client'
 
 type Message = {
   id: string
@@ -134,109 +135,7 @@ watch(
   }
 )
 
-function getResponse(question: string): string {
-  const q = question.toLowerCase()
-
-  // 인사말
-  if (q.includes('안녕') || q.includes('hi') || q.includes('hello')) {
-    return '안녕하세요! 순천향대학교에 대해 무엇이 궁금하신가요?'
-  }
-
-  // 위치 관련
-  if (q.includes('위치') || q.includes('어디') || q.includes('주소')) {
-    return '순천향대학교는 충청남도 아산시 신창면 순천향로 22에 위치해 있습니다. 서울에서 KTX로 약 30분 거리로 접근성이 우수합니다.'
-  }
-
-  // 전화번호
-  if (q.includes('전화') || q.includes('연락처')) {
-    return '대표전화: 041-530-1114\n입학상담: 041-530-1000\n평일 오전 9시부터 오후 6시까지 상담 가능합니다.'
-  }
-
-  // 학과 관련
-  if (q.includes('학과') || q.includes('전공') || q.includes('단과대')) {
-    return '순천향대학교는 공과대학, 의과대학, 경상대학, 인문대학, 예술대학, 자연과학대학 등 6개 단과대학에 50개 이상의 학과가 있습니다. 구체적인 학과를 말씀해주시면 자세히 안내해드릴게요!'
-  }
-
-  // 컴퓨터공학과
-  if (q.includes('컴퓨터') || q.includes('소프트웨어') || q.includes('코딩')) {
-    return '컴퓨터공학과는 소프트웨어 개발 및 인공지능 전문가를 양성하는 학과입니다. 최신 프로그래밍 언어, AI, 빅데이터 등을 배우실 수 있습니다.'
-  }
-
-  // 의과대학
-  if (q.includes('의대') || q.includes('의학') || q.includes('간호')) {
-    return '의과대학은 의예과/의학과, 간호학과, 보건행정학과, 물리치료학과 등이 있으며, 인간 중심의 의료 전문가를 양성합니다.'
-  }
-
-  // 입학 관련
-  if (q.includes('입학') || q.includes('모집') || q.includes('전형')) {
-    return '2026년 입학 전형은 수시모집(약 70%)과 정시모집(약 30%)으로 나뉩니다.\n- 원서접수: 9월\n- 서류제출: 10월\n- 전형일정: 11월\n- 합격발표: 12월\n자세한 내용은 입학처(041-530-1000)로 문의해주세요.'
-  }
-
-  // 등록금
-  if (q.includes('등록금') || q.includes('학비') || q.includes('장학금')) {
-    return '등록금은 학과별로 상이하며, 다양한 장학금 제도를 운영하고 있습니다. 성적우수 장학금, 가계곤란 장학금, 국가장학금 등이 있습니다.'
-  }
-
-  // 기숙사
-  if (q.includes('기숙사') || q.includes('생활관') || q.includes('숙소')) {
-    return '교내 기숙사는 쾌적한 생활 환경을 제공하며, 신입생 우선 배정됩니다. 2인실, 4인실 등 다양한 형태가 있으며, 식사는 학생식당을 이용하실 수 있습니다.'
-  }
-
-  // 도서관
-  if (q.includes('도서관') || q.includes('열람실')) {
-    return '중앙도서관은 24시간 운영되는 최첨단 학습 공간입니다. 약 100만권의 장서와 전자자료를 보유하고 있으며, 개인 열람실과 그룹 스터디룸도 이용 가능합니다.'
-  }
-
-  // 취업률
-  if (q.includes('취업') || q.includes('진로') || q.includes('취직')) {
-    return '순천향대학교의 취업률은 약 85%로 높은 편입니다. 산학협력을 통한 현장실습, 취업박람회, 진로상담 등 다양한 취업 지원 프로그램을 운영하고 있습니다.'
-  }
-
-  // 교환학생
-  if (q.includes('교환학생') || q.includes('해외') || q.includes('유학')) {
-    return '200개 이상의 해외 대학과 교류 협정을 맺고 있으며, 교환학생 프로그램, 어학연수, 해외인턴십 등 다양한 글로벌 프로그램을 운영합니다.'
-  }
-
-  // 동아리
-  if (q.includes('동아리') || q.includes('동호회') || q.includes('학회')) {
-    return '학술, 문화예술, 체육, 봉사 등 다양한 분야의 100여개 동아리가 활동하고 있습니다. 학생회관에서 동아리 활동을 할 수 있습니다.'
-  }
-
-  // 식당
-  if (q.includes('식당') || q.includes('밥') || q.includes('식사')) {
-    return '교내에 학생식당, 교직원식당, 카페테리아 등이 있으며, 한식, 양식, 중식, 일식 등 다양한 메뉴를 합리적인 가격에 제공합니다.'
-  }
-
-  // 건학이념
-  if (q.includes('이념') || q.includes('정신') || q.includes('가치')) {
-    return '순천향대학교의 건학 이념은 "인간 사랑과 생명 존중"입니다. 창의적이고 실용적인 인재를 양성하여 사회에 기여하는 것을 목표로 합니다.'
-  }
-
-  // 캠퍼스
-  if (q.includes('캠퍼스') || q.includes('시설')) {
-    return '아름다운 자연환경 속에 최첨단 강의동, 실험실습동, 중앙도서관, 학생회관, 체육시설, 기숙사 등이 갖춰져 있습니다.'
-  }
-
-  // 기본 응답
-  return [
-    '해당 질문에 대한 답변을 찾지 못했습니다. 다음 키워드로 질문해보세요:',
-    '',
-    '• 위치/주소',
-    '• 전화번호',
-    '• 학과/전공',
-    '• 입학/전형',
-    '• 등록금/장학금',
-    '• 기숙사',
-    '• 도서관',
-    '• 취업',
-    '• 교환학생',
-    '• 동아리',
-    '',
-    '또는 입학처(041-530-1000)로 문의해주세요.',
-  ].join('\n')
-}
-
-function handleSendMessage() {
+async function handleSendMessage() {
   const text = inputValue.value.trim()
   if (!text) return
 
@@ -250,15 +149,24 @@ function handleSendMessage() {
   messages.value = [...messages.value, userMessage]
   inputValue.value = ''
 
-  setTimeout(() => {
+  try {
+    const answer = await apiClient.chat(text)
     const botResponse: Message = {
       id: (Date.now() + 1).toString(),
-      text: getResponse(text),
+      text: answer,
       isBot: true,
       timestamp: new Date(),
     }
     messages.value = [...messages.value, botResponse]
-  }, 500)
+  } catch (error) {
+    const errorMessage: Message = {
+      id: (Date.now() + 1).toString(),
+      text: '죄송합니다. 응답을 가져오는 중 오류가 발생했습니다.',
+      isBot: true,
+      timestamp: new Date(),
+    }
+    messages.value = [...messages.value, errorMessage]
+  }
 }
 
 const quickQuestions = [

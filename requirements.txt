@@ -1,10 +1,8 @@
-# FastAPI 및 서버
 fastapi
 uvicorn
 jinja2
 pydantic
 
-# LangChain 및 AI
 langchain
 langchain-core
 langchain-openai
@@ -12,16 +10,28 @@ langchain-community
 langchain-text-splitters
 openai
 
-# 벡터 DB 및 임베딩
 faiss-cpu
 numpy
 
-# 문서 처리
 pypdf
 
-# 파일 감시
 watchdog
 
-# 환경 변수
 python-dotenv
 pytest
+
+rich
+
+# Database
+sqlalchemy[asyncio]
+asyncpg
+psycopg2-binary
+
+# Redis
+redis
+
+# JWT & Auth
+pyjwt
+passlib[bcrypt]
+python-multipart
+pydantic[email]
