@@ -21,3 +21,11 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Harness Engineering (AI Agent 전용 — Git 제외)
+CLAUDE.md
+.agent_rules/
+portfolio.md
+USAGE_GUIDE.md
+AUTH_README.md
+rules/
