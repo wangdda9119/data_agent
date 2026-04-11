@@ -1,6 +1,37 @@
 fastapi
 uvicorn
 jinja2
+pydantic
+
 langchain
+langchain-core
 langchain-openai
+langchain-community
+langchain-text-splitters
+openai
+
+faiss-cpu
+numpy
+
+pypdf
+
+watchdog
+
 python-dotenv
+pytest
+
+rich
+
+# Database
+sqlalchemy[asyncio]
+asyncpg
+psycopg2-binary
+
+# Redis
+redis
+
+# JWT & Auth
+pyjwt
+passlib[bcrypt]
+python-multipart
+pydantic[email]
