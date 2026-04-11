@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/app/components/Home.vue'
 import ChatbotPage from '@/app/components/ChatbotPage.vue'
+import Mypage from '@/app/components/Mypage.vue'
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/chatbot',
     name: 'Chatbot',
     component: ChatbotPage
+  },
+  {
+    path: '/mypage',
+    name: 'Mypage',
+    component: Mypage
   }
 ]
 

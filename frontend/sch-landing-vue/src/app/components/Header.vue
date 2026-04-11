@@ -20,6 +20,7 @@
         >
           {{ item.label }}
         </a>
+        <UiButton v-if="isLoggedIn" @click="goToMypage" size="sm" variant="outline" class="ml-2">마이페이지</UiButton>
         <UiButton v-if="!isLoggedIn" @click="openLogin" size="sm" variant="outline" class="ml-2">로그인</UiButton>
         <UiButton v-if="!isLoggedIn" @click="openSignup" size="sm" class="ml-2">회원가입</UiButton>
         <UiButton v-if="isLoggedIn" @click="handleLogout" size="sm" variant="outline" class="ml-2">로그아웃</UiButton>
@@ -49,6 +50,7 @@
           {{ item.label }}
         </a>
         <div class="px-4 pt-2 space-y-2">
+          <UiButton v-if="isLoggedIn" @click="goToMypage; isMenuOpen = false" class="w-full" variant="outline">마이페이지</UiButton>
           <UiButton v-if="!isLoggedIn" @click="openLogin; isMenuOpen = false" class="w-full" variant="outline">로그인</UiButton>
           <UiButton v-if="!isLoggedIn" @click="openSignup; isMenuOpen = false" class="w-full">회원가입</UiButton>
           <UiButton v-if="isLoggedIn" @click="handleLogout" class="w-full" variant="outline">로그아웃</UiButton>
@@ -60,11 +62,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { Menu, X } from 'lucide-vue-next'
 import UiButton from '@/app/components/ui/Button.vue'
 import { apiClient } from '@/api/client'
 import { showLoginModal, showSignupModal } from '@/api/authModal.js'
 
+const router = useRouter()
 const isMenuOpen = ref(false)
 const isLoggedIn = ref(apiClient.isAuthenticated())
 
@@ -79,6 +83,10 @@ function openLogin() {
 
 function openSignup() {
   showSignupModal()
+}
+
+function goToMypage() {
+  router.push('/mypage')
 }
 
 const menuItems = [
