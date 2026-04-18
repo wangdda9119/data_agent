@@ -8,6 +8,7 @@ langchain-core
 langchain-openai
 langchain-community
 langchain-text-splitters
+langgraph
 openai
 
 faiss-cpu
@@ -26,9 +27,6 @@ rich
 sqlalchemy[asyncio]
 asyncpg
 psycopg2-binary
-
-# Redis
-redis
 
 # JWT & Auth
 pyjwt

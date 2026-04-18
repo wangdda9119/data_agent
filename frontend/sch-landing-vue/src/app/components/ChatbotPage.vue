@@ -97,7 +97,7 @@ const sendMessage = async () => {
 
   try {
     // 백엔드 API 호출
-    const response = await fetch('http://localhost:8000/api/chat', {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || ''}/api/chat`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

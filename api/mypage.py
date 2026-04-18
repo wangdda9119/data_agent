@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from fastapi.security import HTTPBearer, HTTPAuthCredentials
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 import jwt
 import psycopg2
 from psycopg2.extras import RealDictCursor
 import os
+from urllib.parse import urlparse
 
 router = APIRouter()
 security = HTTPBearer()
@@ -11,19 +12,41 @@ security = HTTPBearer()
 JWT_SECRET = os.getenv("JWT_SECRET", "your-secret-key")
 JWT_ALGORITHM = "HS256"
 
-DB_CONFIG = {
-    "host": os.getenv("DB_HOST", "localhost"),
-    "database": os.getenv("DB_NAME", "your_database"),
-    "user": os.getenv("DB_USER", "postgres"),
-    "password": os.getenv("DB_PASSWORD", "password")
-}
+
+def _parse_db_config():
+    """DATABASE_URL에서 DB 접속 정보 파싱 (개발/운영 통합)"""
+    db_url = os.getenv("DATABASE_URL", "")
+    if db_url:
+        # asyncpg 프리픽스 제거 후 파싱
+        url = db_url.replace("postgresql+asyncpg://", "postgresql://")
+        parsed = urlparse(url)
+        config = {
+            "host": parsed.hostname,
+            "database": parsed.path.lstrip("/"),
+            "user": parsed.username,
+            "password": parsed.password,
+            "port": parsed.port or 5432,
+        }
+        # Supabase는 SSL 필요
+        if "supabase" in db_url:
+            config["sslmode"] = "require"
+        return config
+    return {
+        "host": os.getenv("DB_HOST", "localhost"),
+        "database": os.getenv("DB_NAME", "your_database"),
+        "user": os.getenv("DB_USER", "postgres"),
+        "password": os.getenv("DB_PASSWORD", "password"),
+    }
+
+
+DB_CONFIG = _parse_db_config()
 
 
 def get_db_connection():
     return psycopg2.connect(**DB_CONFIG)
 
 
-def verify_token(credentials: HTTPAuthCredentials = Depends(security)):
+def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
     try:
         token = credentials.credentials
         payload = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
