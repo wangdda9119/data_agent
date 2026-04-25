@@ -104,9 +104,17 @@ if VUE_DIST.exists():
     if assets_dir.exists():
         app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="assets")
 
+    @app.get("/")
+    async def serve_spa_root():
+        """SPA 루트 경로"""
+        return FileResponse(str(VUE_DIST / "index.html"))
+
     @app.get("/{full_path:path}")
     async def serve_spa(full_path: str):
         """SPA fallback — Vue Router가 처리할 경로는 index.html 반환"""
+        # 요청된 경로가 비어있으면 (이론상 방어)
+        if not full_path:
+            return FileResponse(str(VUE_DIST / "index.html"))
         # 요청된 경로에 실제 파일이 있으면 해당 파일 반환
         file_path = VUE_DIST / full_path
         if file_path.is_file():
