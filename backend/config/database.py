@@ -8,9 +8,14 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# Supabase 주소를 postgres:// 로 입력했을 때 자동으로 postgresql+asyncpg:// 로 변환
-if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
-    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+asyncpg://", 1)
+# Supabase/Render 주소를 postgres:// 또는 postgresql:// 로 입력했을 때 자동으로 postgresql+asyncpg:// 로 변환
+if DATABASE_URL:
+    if DATABASE_URL.startswith("postgresql+asyncpg://"):
+        pass  # 이미 올바른 형식
+    elif DATABASE_URL.startswith("postgresql://"):
+        DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://", 1)
+    elif DATABASE_URL.startswith("postgres://"):
+        DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+asyncpg://", 1)
 
 # DATABASE_URL 환경변수가 누락된 경우 명시적인 에러 발생
 if not DATABASE_URL:
